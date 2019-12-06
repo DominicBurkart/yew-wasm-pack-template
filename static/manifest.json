@@ -1,0 +1,21 @@
+{
+  "short_name": "To Do",
+  "name": "Yew • TodoMVC with PWA",
+  "icons": [
+    {
+      "src": "./assets/yew192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./assets/yew512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?pwa=true",
+  "background_color": "#FFEFB8",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#FFD707"
+}
