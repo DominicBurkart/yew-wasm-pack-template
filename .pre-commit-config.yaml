@@ -1,0 +1,36 @@
+-   repo: local
+    hooks:
+    -   id: rerun dev install
+        name: Dev Install
+        description: Runs dev install on each commit.
+        entry: sh dev_install.sh
+        pass_filenames: false
+        language: system
+    -   id: rust-linting-api
+        name: Rust linting on API
+        description: Run cargo fmt on files included in the commit. rustfmt should be installed before-hand.
+        entry: sh -c 'cd api && cargo fmt --all --'
+        pass_filenames: true
+        types: [file, rust]
+        language: system
+    -   id: rust-linting-ui
+        name: Rust linting on UI
+        description: Run cargo fmt on files included in the commit. rustfmt should be installed before-hand.
+        entry: sh -c 'cd ui && cargo fmt --all --'
+        pass_filenames: true
+        types: [file, rust]
+        language: system
+    -   id: rust-clippy-api
+        name: Rust clippy on API
+        description: Run cargo clippy on files included in the commit. clippy should be installed before-hand.
+        entry: bash -c 'cd api && cargo +nightly clippy --all-features --all --'
+        pass_filenames: false
+        types: [file, rust]
+        language: system
+    -   id: rust-clippy-ui
+        name: Rust clippy on UI
+        description: Run cargo clippy on files included in the commit. clippy should be installed before-hand.
+        entry: sh -c 'cd ui && cargo +nightly clippy --all-features --all --'
+        pass_filenames: false
+        types: [file, rust]
+        language: system
