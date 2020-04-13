@@ -23,14 +23,14 @@
     -   id: rust-clippy-api
         name: Rust clippy on API
         description: Run cargo clippy on files included in the commit. clippy should be installed before-hand.
-        entry: bash -c 'cd api && cargo +nightly clippy --all-features --all --'
+        entry: bash -c 'cd api && cargo clippy --all-features --all --'
         pass_filenames: false
         types: [file, rust]
         language: system
     -   id: rust-clippy-ui
         name: Rust clippy on UI
         description: Run cargo clippy on files included in the commit. clippy should be installed before-hand.
-        entry: sh -c 'cd ui && cargo +nightly clippy --all-features --all --'
+        entry: sh -c 'cd ui && cargo clippy --all-features --all --'
         pass_filenames: false
         types: [file, rust]
         language: system
